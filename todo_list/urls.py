@@ -1,8 +1,10 @@
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from mainshild.urls import mainshildurlpatterns
+from mainshild.views import TaskListCreateView, TaskDetailView
 
-urlpatterns = [
+
+urlpatterns = mainshildurlpatterns + [
     path('admin/', admin.site.urls),
-    path('api/', include('task.urls')),
 ]
